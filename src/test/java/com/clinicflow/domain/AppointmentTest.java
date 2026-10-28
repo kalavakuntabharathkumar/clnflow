@@ -1,0 +1,3 @@
+package com.clinicflow.domain;
+import org.junit.jupiter.api.Test; import java.time.LocalDateTime; import static org.junit.jupiter.api.Assertions.*;
+class AppointmentTest { @Test void newAppointmentDefaultsToBooked(){Appointment a=new Appointment();assertEquals(Appointment.Status.BOOKED,a.getStatus());} @Test void statusCanBeChanged(){Appointment a=new Appointment();a.setStatus(Appointment.Status.CONFIRMED);assertEquals(Appointment.Status.CONFIRMED,a.getStatus());} @Test void fieldsRoundTrip(){Appointment a=new Appointment();a.setPatientName("Mina");a.setScheduledAt(LocalDateTime.parse("2026-10-10T09:00:00"));assertEquals("Mina",a.getPatientName());assertEquals(9,a.getScheduledAt().getHour());} }

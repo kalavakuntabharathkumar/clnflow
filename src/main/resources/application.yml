@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: clinicflow
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/clinicflow}
+    username: ${SPRING_DATASOURCE_USERNAME:clinicflow}
+    password: ${SPRING_DATASOURCE_PASSWORD:clinicflow}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+server:
+  port: ${PORT:8080}
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
